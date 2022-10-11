@@ -1,5 +1,7 @@
+"use strict";
+const username = "Herlon Costa";
 function helloWorld(language) {
-    return "Hello World ".concat(language, "!");
+    return `Hello World ${language}!`;
 }
-var output = helloWorld("TypeScript");
+const output = helloWorld("TypeScript");
 console.log(output);

@@ -4,7 +4,8 @@
   "description": "Curso de TypeScript promovido pela Cod3r",
   "main": "index.js",
   "scripts": {
-    "start": "live-server . --port=4000"
+    "start": "live-server . --port=4000",
+    "compile": "tsc -w"
   },
   "repository": {
     "type": "git",
