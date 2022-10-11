@@ -90,7 +90,7 @@ type Funcionarios = {
 }
 
 const baterPonto = (horario: number): string => 
-  horario < 8 ? "Horário normal" : "Fora do horário"
+  horario <= 8 ? "Horário normal" : "Fora do horário"
 
 const funcionarios1: Funcionarios = {
   supervisores: ["Herlon", "Diego"],
@@ -101,3 +101,13 @@ const funcionarios2: Funcionarios = {
   supervisores: ["Diego", "Herlon"],
   baterPonto
 }
+
+console.log(funcionarios1.baterPonto(8))
+console.log(funcionarios2.baterPonto(9))
+
+// Union Types
+let nota: number | string = 10
+console.log(`Minha nota é ${nota}`)
+
+nota = "10"
+console.log(`Minha nota é ${nota}`)

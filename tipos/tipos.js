@@ -63,7 +63,7 @@ usuario = {
     nome: "Herlon",
     idade: 26
 };
-const baterPonto = (horario) => horario < 8 ? "Horário normal" : "Fora do horário";
+const baterPonto = (horario) => horario <= 8 ? "Horário normal" : "Fora do horário";
 const funcionarios1 = {
     supervisores: ["Herlon", "Diego"],
     baterPonto
@@ -72,3 +72,10 @@ const funcionarios2 = {
     supervisores: ["Diego", "Herlon"],
     baterPonto
 };
+console.log(funcionarios1.baterPonto(8));
+console.log(funcionarios2.baterPonto(9));
+// Union Types
+let nota = 10;
+console.log(`Minha nota é ${nota}`);
+nota = "10";
+console.log(`Minha nota é ${nota}`);
