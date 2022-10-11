@@ -63,3 +63,12 @@ usuario = {
     nome: "Herlon",
     idade: 26
 };
+const baterPonto = (horario) => horario < 8 ? "Horário normal" : "Fora do horário";
+const funcionarios1 = {
+    supervisores: ["Herlon", "Diego"],
+    baterPonto
+};
+const funcionarios2 = {
+    supervisores: ["Diego", "Herlon"],
+    baterPonto
+};

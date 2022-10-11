@@ -81,3 +81,23 @@ usuario = {
   nome: "Herlon",
   idade: 26
 }
+
+// type (Alias) tipo predefinido de objeto
+
+type Funcionarios = {
+  supervisores: string[],
+  baterPonto: (horario: number) => string
+}
+
+const baterPonto = (horario: number): string => 
+  horario < 8 ? "Horário normal" : "Fora do horário"
+
+const funcionarios1: Funcionarios = {
+  supervisores: ["Herlon", "Diego"],
+  baterPonto
+}
+
+const funcionarios2: Funcionarios = {
+  supervisores: ["Diego", "Herlon"],
+  baterPonto
+}
