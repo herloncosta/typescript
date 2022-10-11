@@ -35,3 +35,31 @@ var Cor;
 })(Cor || (Cor = {}));
 let minhaCor = Cor.Azul;
 console.log(minhaCor);
+// any
+let carro = "BMW";
+console.log(carro);
+carro = { marca: "BMW", ano: 2019 };
+// funções
+function retornaMeuNome() {
+    return nome;
+}
+console.log(retornaMeuNome());
+function digaOi() {
+    console.log("Oi!");
+}
+digaOi();
+// tipando parâmetros e retorno da função
+function multiplicar(x, y) {
+    return x * y;
+}
+console.log(multiplicar(10, 10));
+// tipo função
+let calculo;
+calculo = multiplicar;
+console.log(calculo(6, 6));
+// objetos
+let usuario;
+usuario = {
+    nome: "Herlon",
+    idade: 26
+};
