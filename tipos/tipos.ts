@@ -135,3 +135,33 @@ const produto: Produto = {
 }
 
 produto.validarProduto()
+
+// null type
+let altura = 12
+
+// altura = null - variáveis com valor atribuído não aceitam null como reatribuição
+// Sendo necessário algo assim, o ideal nesses casos é a utilização de union types
+let alturaOpcional: null | number = 12
+alturaOpcional = null 
+
+// caso de uso
+type Contato = {
+  nome: string
+  tel1: string
+  tel2: string | null
+}
+
+const contato: Contato = {
+  nome: "Herlon Costa",
+  tel1: "(71) 98301-2996",
+  tel2: null
+}
+
+console.log("Nome", contato.nome)
+console.log("Tel1:", contato.tel1)
+console.log("Tel2:", contato.tel2)
+
+// o tipo null existe mas o uso somente dele não tem sentido
+let valorVazio: null = null // null explícito => não pode ser reatribuído com outro tipo
+// o tipo any é inferido automaticamente a uma variável atribuída do valor null
+let podeSerNulo = null // any inferido => pode ser reatribuído com qualquer tipo
