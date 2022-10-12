@@ -1,4 +1,5 @@
 "use strict";
+// noEmitOnError
 let canal = "Dave Gray";
 let inscritos = 83300;
 // canal = inscritos => por conta do conflito de tipos 
@@ -14,4 +15,12 @@ console.log(canal); // o uso do ; é obrigatório quando existe uma função
 // (function() {
 //     let nome = "Pedro"
 // })()
+// noImplicityAny
+// function somar(a, b) { => o tipo any é inferido para os parâmetros, mas o código não compila
+//     return a + b
+// }
+function somar(a, b) {
+    return a + b;
+}
+console.log(somar(10, 10));
 //# sourceMappingURL=compilador.js.map

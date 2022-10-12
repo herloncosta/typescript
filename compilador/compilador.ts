@@ -1,3 +1,4 @@
+// noEmitOnError
 let canal: string = "Dave Gray"
 let inscritos: number = 83300
 
@@ -19,3 +20,14 @@ console.log(canal); // o uso do ; é obrigatório quando existe uma função
 // (function() {
 //     let nome = "Pedro"
 // })()
+
+// noImplicityAny
+// function somar(a, b) { => o tipo any é inferido para os parâmetros, mas o código não compila
+//     return a + b
+// }
+
+function somar(a: any, b: any): any {
+    return a + b
+}
+
+console.log(somar(10, 10))
