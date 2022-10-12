@@ -67,3 +67,17 @@ if (estaFrio) {
 
 // const funciona da mesma forma que o let, porém
 // o seu valor não pode ser reatribuído
+
+// funções
+
+// function declaration
+function somarDoisValores(n1: number, n2: number): number {
+    return n1 + n2
+}
+const resultadoSoma = somar(2, 10)
+console.log(resultadoSoma)
+
+// arrow function
+const subtrair = (n1: number, n2: number): number => n1 - n2
+const resultadoSubtracao = subtrair(10, 5)
+console.log(resultadoSubtracao)
