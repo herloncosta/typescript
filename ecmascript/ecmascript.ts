@@ -7,19 +7,25 @@ let seraQuePode = "?"
 console.log(seraQuePode) // ?
 
 // escopo das variáveis
-const _var = {
+type VariavelModel = {
+    escopo: string[]
+    suportaHoisting: boolean
+    podeSerReatribuida: boolean
+}
+
+const _var: VariavelModel = {
     escopo: ["global", "função"],
     suportaHoisting: true,
     podeSerReatribuida: true
 }
 
-const _let = {
+const _let: VariavelModel = {
     escopo: ["global", "local", "função"],
     suportaHoisting: false,
     podeSerReatribuida: true
 }
 
-const _const = {
+const _const: VariavelModel = {
     escopo: ["global", "local", "função"],
     suportaHoisting: false,
     podeSerReatribuida: false
@@ -44,18 +50,18 @@ const _const = {
 // console.log(acao) // Usar casaco!
 
 // console.log(nomeExemplo) // variável não definida
-let nomeExemplo = "Herlon"
+let nomeExemplo: string = "Herlon"
 nomeExemplo = "Diego"
 console.log(nomeExemplo)
 
 function escopo(): void {
-    let sobrenome = "Costa"
+    let sobrenome: string = "Costa"
 }
 // console.log(sobrenome) // variável não definida
 
-let estaFrio = true
+let estaFrio: boolean = true
 if (estaFrio) {
-    let acao = "Usar casaco!"
+    let acao: string = "Usar casaco!"
 }
 // console.log(acao) // variável não definida
 
