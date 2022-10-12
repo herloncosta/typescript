@@ -79,3 +79,18 @@ let nota = 10;
 console.log(`Minha nota é ${nota}`);
 nota = "10";
 console.log(`Minha nota é ${nota}`);
+// never - define função sem retorno e que a execução não chega ao fim
+function falha(msg) {
+    throw new Error(msg);
+}
+const produto = {
+    nome: "Caneta",
+    preco: 2,
+    validarProduto() {
+        !this.nome || this.nome.trim().length === 0
+            ? falha("Nome deve ser definido!") : null;
+        !this.preco || this.preco <= 0
+            ? falha("Preço deve ser maior que 0!") : null;
+    }
+};
+produto.validarProduto();

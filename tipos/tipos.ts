@@ -83,7 +83,6 @@ usuario = {
 }
 
 // type (Alias) tipo predefinido de objeto
-
 type Funcionarios = {
   supervisores: string[],
   baterPonto: (horario: number) => string
@@ -111,3 +110,28 @@ console.log(`Minha nota é ${nota}`)
 
 nota = "10"
 console.log(`Minha nota é ${nota}`)
+
+// never - define função sem retorno e que a execução não chega ao fim
+function falha(msg: string): never {
+  throw new Error(msg)
+}
+
+// caso de uso type never
+type Produto = {
+  nome: string
+  preco: number
+  validarProduto: () => void
+}
+
+const produto: Produto = {
+  nome: "Caneta",
+  preco: 2,
+  validarProduto() {
+    !this.nome || this.nome.trim().length === 0 
+      ? falha("Nome deve ser definido!") : null
+    !this.preco || this.preco <= 0 
+      ? falha("Preço deve ser maior que 0!") : null
+  }
+}
+
+produto.validarProduto()
