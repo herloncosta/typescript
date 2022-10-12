@@ -5,3 +5,4 @@ function helloWorld(language) {
 }
 const output = helloWorld("TypeScript");
 console.log(output);
+//# sourceMappingURL=basico.js.map

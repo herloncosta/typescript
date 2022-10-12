@@ -11,3 +11,4 @@ funcionario = {
     supervisores: ["Herlon", "Diego"],
     baterPonto: (horario) => horario <= 8 ? "Horário normal" : "Fora do horário"
 };
+//# sourceMappingURL=desafioObjeto.js.map

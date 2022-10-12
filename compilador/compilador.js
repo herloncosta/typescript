@@ -14,3 +14,4 @@ console.log(canal); // o uso do ; é obrigatório quando existe uma função
 // (function() {
 //     let nome = "Pedro"
 // })()
+//# sourceMappingURL=compilador.js.map

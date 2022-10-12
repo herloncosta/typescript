@@ -112,3 +112,4 @@ console.log("Tel2:", contato.tel2);
 let valorVazio = null; // null explícito => não pode ser reatribuído com outro tipo
 // o tipo any é inferido automaticamente a uma variável atribuída do valor null
 let podeSerNulo = null; // any inferido => pode ser reatribuído com qualquer tipo
+//# sourceMappingURL=tipos.js.map
