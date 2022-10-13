@@ -21,3 +21,18 @@ const casamento = new Data // O Javascript permite ignorar os parêntes
 console.log(casamento.dia)
 casamento.ano = 2017
 console.log(casamento)
+
+// Sintaxe mais curta
+// Os atributos podem ser passados diretamente para o construtor
+class DataClean {
+    constructor(
+        public dia: number = 1, 
+        public mes: number = 1, 
+        public ano: number = 1970
+    ) {}
+}
+
+const diaDasCriancas = new DataClean(12, 10)
+console.log(diaDasCriancas.dia)
+diaDasCriancas.ano = 2022
+console.log(diaDasCriancas)
