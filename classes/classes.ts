@@ -36,3 +36,36 @@ const diaDasCriancas = new DataClean(12, 10)
 console.log(diaDasCriancas.dia)
 diaDasCriancas.ano = 2022
 console.log(diaDasCriancas)
+
+// Modificadores de acesso
+class Carro {
+    private velocidadeAtual: number = 0
+
+    constructor(public marca: string, public modelo: string, private velocidadeMaxima: number) {}
+
+    private alterarVelocidade(delta: number): number {
+        const novaVelocidade =this.velocidadeAtual + delta
+        const velocidadeValida = novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima
+
+        if (velocidadeValida) {
+            this.velocidadeAtual = novaVelocidade
+        } else {
+            this.velocidadeAtual = delta > 0 ? this.velocidadeMaxima : 0
+        }
+
+        return this.velocidadeAtual
+    }
+
+    public acelerar(): number {
+        return this.alterarVelocidade(5)
+    }
+
+    public freiar(): number {
+        return this.alterarVelocidade(-5)
+    }
+}
+
+const carro1 = new Carro("Fort", "Ka", 185)
+
+Array(50).fill(0).forEach(() => carro1.acelerar())
+Array(50).fill(0).forEach(() => carro1.freiar())
