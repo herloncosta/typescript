@@ -44,7 +44,7 @@ class Carro {
     constructor(public marca: string, public modelo: string, private velocidadeMaxima: number) {}
 
     private alterarVelocidade(delta: number): number {
-        const novaVelocidade =this.velocidadeAtual + delta
+        const novaVelocidade = this.velocidadeAtual + delta
         const velocidadeValida = novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima
 
         if (velocidadeValida) {
@@ -67,5 +67,8 @@ class Carro {
 
 const carro1 = new Carro("Fort", "Ka", 185)
 
-Array(50).fill(0).forEach(() => carro1.acelerar())
+Array(50).fill(0).forEach(() => carro1.acelerar())  
 Array(50).fill(0).forEach(() => carro1.freiar())
+
+// Modificadores de acesso (public, private, protected) são restritos ao TS.
+// Em JS não são utilizados.
