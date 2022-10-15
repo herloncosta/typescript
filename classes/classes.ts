@@ -38,7 +38,7 @@ diaDasCriancas.ano = 2022
 console.log(diaDasCriancas)
 
 // Modificadores de acesso
-class Carro {
+export class Carro {
     private velocidadeAtual: number = 0
 
     constructor(public marca: string, public modelo: string, private velocidadeMaxima: number) {}
