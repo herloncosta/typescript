@@ -43,7 +43,7 @@ export class Carro {
 
     constructor(public marca: string, public modelo: string, private velocidadeMaxima: number) {}
 
-    private alterarVelocidade(delta: number): number {
+    protected alterarVelocidade(delta: number): number { // transmitido por herança
         const novaVelocidade = this.velocidadeAtual + delta
         const velocidadeValida = novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima
 
@@ -72,3 +72,14 @@ Array(50).fill(0).forEach(() => carro1.freiar())
 
 // Modificadores de acesso (public, private, protected) são restritos ao TS.
 // Em JS não são utilizados.
+
+/*
+    Public
+        - Visível para todos e trasmitido por herança
+    Private
+        - Visível apenas no contexto da classe e não é transmitido
+        por herança
+    Protected
+        - Visível dentro do contexto da classe e transmitido
+        por herança
+*/
