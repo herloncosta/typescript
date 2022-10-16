@@ -60,7 +60,7 @@ export class Carro {
         return this.alterarVelocidade(5)
     }
 
-    public freiar(): number {
+    public frear(): number {
         return this.alterarVelocidade(-5)
     }
 }
@@ -68,7 +68,7 @@ export class Carro {
 const carro1 = new Carro("Fort", "Ka", 185)
 
 Array(50).fill(0).forEach(() => carro1.acelerar())  
-Array(50).fill(0).forEach(() => carro1.freiar())
+Array(50).fill(0).forEach(() => carro1.frear())
 
 // Modificadores de acesso (public, private, protected) são restritos ao TS.
 // Em JS não são utilizados.
