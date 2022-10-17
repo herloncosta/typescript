@@ -19,6 +19,7 @@ console.log(moto.velocidade)
 moto.acelerar(10)
 console.log(moto.velocidade)
 
+
 // Exercício 2: Herança
 abstract class Objeto2D {
     constructor(
@@ -36,6 +37,7 @@ class Retangulo extends Objeto2D {
 
 const retangulo = new Retangulo(5, 7)
 console.log(`Área: ${retangulo.area()}`)
+
 
 // Exercício 3: Getter e Setter
 class Estagiario {
