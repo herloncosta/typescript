@@ -16,5 +16,3 @@ const PI = 3.33 // não é gerado erro por estar em um escopo diferente
 
 const areaCirculo = Geometria.Area.circulo(10)
 const areaRetangulo = Geometria.Area.retangulo(10, 20)
-
-console.log(areaCirculo, areaRetangulo)
