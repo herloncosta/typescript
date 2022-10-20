@@ -30,7 +30,6 @@ saudarComOla(PessoaLocal.pessoa)
 PessoaLocal.pessoa.saudar("Costa")
 
 // usando interface com classe
-
 class Cliente implements IHumano {
     nome: string = "Herlon"
 
@@ -40,3 +39,16 @@ class Cliente implements IHumano {
         console.log(`Olá, meu nome é ${this.nome} ${sobrenome}!`)
     }
 }
+
+// usando interface com função
+interface IFuncaoCalculo {
+    (a: number, b: number): number
+}
+
+let potencia: IFuncaoCalculo
+
+potencia = function(base: number, exp: number): number {
+    return base ** exp
+}
+
+console.log(potencia(10, 2))
