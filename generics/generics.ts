@@ -45,3 +45,36 @@ listar<Usuario>([
     { nome: "Herlon", senha: "senha", online: false },
     { nome: "Diego", senha: "senha", online: true },
 ])
+
+// Generics com classes
+
+// implementação errada
+// class OperacaoBinaria {
+//     constructor(public op1: any, public op2: any) {}
+
+//     executar(): any {
+//         return this.op1 + this.op2
+//     }
+// }
+
+// alguns comportamentos errados acabam passando
+// new OperacaoBinaria(10, 10).executar() // 20
+// new OperacaoBinaria("Bom", "dia").executar() // Bom dia
+// new OperacaoBinaria(3, "três").executar() // 3três
+// new OperacaoBinaria({}, 2) // [object Object]2
+
+// implementação correta 
+abstract class OperacaoBinaria<T, R> {
+    constructor(public op1: T, public op2: T) {}
+
+    abstract executar(): R
+}
+
+class SomaBinaria extends OperacaoBinaria<number, number> {
+    executar(): number {
+        return this.op1 + this.op2
+    }
+}
+
+new SomaBinaria(10, 10).executar() // 20
+// new SomaBinaria(10, "teste").executar() // Não atribuível
