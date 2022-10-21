@@ -18,3 +18,9 @@ funcaoGenerica("Herlon").length // 6
 
 // Ou o tipo pode ser alterado manualmente
 funcaoGenerica<number>(10) // funcaoGenerica(objeto: number): number
+
+// Generics com Array
+const avaliacoes: Array<number> = [9.8, 7.5, 6.9, 10]
+
+avaliacoes.push(8.3)
+// avaliacoes.push("5.5") // Não atribuível
