@@ -24,3 +24,24 @@ const avaliacoes: Array<number> = [9.8, 7.5, 6.9, 10]
 
 avaliacoes.push(8.3)
 // avaliacoes.push("5.5") // Não atribuível
+
+function listar<T>(args: T[]) {
+    return args.forEach(arg => arg)
+}
+
+listar([1, 2, 3]) // number por inferência
+listar<number>([4, 5, 6]) // number por definição
+listar(["Maria", "Pedro", "Paula"]) // string por inferência
+listar<string>(["José", "Sandra", "Mariano"]) // string por definição
+
+type Usuario = {
+    nome: string
+    senha: string
+    online: boolean
+}
+
+// passando tipo predefinido
+listar<Usuario>([
+    { nome: "Herlon", senha: "senha", online: false },
+    { nome: "Diego", senha: "senha", online: true },
+])
