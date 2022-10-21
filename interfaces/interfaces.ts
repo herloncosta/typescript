@@ -52,3 +52,51 @@ potencia = function(base: number, exp: number): number {
 }
 
 console.log(potencia(10, 2))
+
+// Herança
+interface IA {
+    a(): void
+}
+
+interface IB {
+    b(): void
+}
+
+// uma interface pode extender uma ou mais interfaces
+interface IABC extends IA, IB {
+    c(): void
+}
+
+// uma classe pode implementar uma ou mais interfaces
+class RealA implements IA, IB {
+    a(): void {}
+    b(): void {}
+    d(): void {} // e podem ser definidos atributos adicionais
+}
+
+// os métodos das interfaces implementadas pela classe 
+// devem ser declarados
+abstract class RealABD implements IA, IB {
+    a(): void {}
+    b(): void {}
+    d(): void {}
+}
+
+// implementando interface em Object
+interface Object {
+    log(): void
+}
+
+// inserindo o método log no prototype de Object
+Object.prototype.log = function() {
+    console.log(this.toString())
+}
+
+const cli = {
+    nome: "Herlon Costa",
+    toString() { // manipulado retorno do objeto
+        return this.nome
+    }
+}
+
+cli.log() // Herlon Costa
