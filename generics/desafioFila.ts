@@ -1,4 +1,4 @@
-class Fila<T> {
+class Fila<T extends number | string> {
 
     private fila: Array<T>
 
