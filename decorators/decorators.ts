@@ -87,6 +87,7 @@ invocacao.imprimir && invocacao.imprimir() // invoca imprimir apenas se o métod
 
 // decorator de método
 class Banco {
+    @naoNegativo
     private saldo: number = 1000
     constructor() {}
 
@@ -113,4 +114,22 @@ function congelar(
     descritor: PropertyDescriptor
 ): void {
     descritor.writable= false
+}
+
+// decorator de atributo
+function naoNegativo(alvo: any, nomePropriedade: string) {
+    delete alvo[nomePropriedade] // deleta a propriedade atual
+
+    Object.defineProperty(alvo, nomePropriedade, { // substitui com a nova lógica
+        get: function(): void {
+            return alvo["_" + nomePropriedade]
+        },
+        set: function(valor: any): void {
+            if (valor < 0) {
+                throw new Error("Saldo inválido!")
+            } else {
+                alvo["_" + nomePropriedade]
+            }
+        }
+    })
 }
