@@ -62,3 +62,25 @@ new Decorator()
     Nova instância de Decorator
     Depois
 */
+
+// Adicionando método em classe com Decorator
+interface RecebeMetodo {
+    imprimir?(): void // garantindo que a classe pode ter o método ou não
+}
+
+@logarObjeto // a classe pode receber mais de um decorator
+@imprimivel // implementação do decorator
+class RecebeMetodo implements RecebeMetodo {
+    constructor() {
+        console.log("Recebi um novo método...")
+    }
+}
+
+function imprimivel(prototipo: Function) {
+    prototipo.prototype.imprimir = function(){ // inserindo método no protótipo
+        console.log(this)
+    }
+}
+
+const invocacao = new RecebeMetodo() // instância da classe
+invocacao.imprimir && invocacao.imprimir() // invoca imprimir apenas se o método existir
