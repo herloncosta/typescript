@@ -84,3 +84,33 @@ function imprimivel(prototipo: Function) {
 
 const invocacao = new RecebeMetodo() // instância da classe
 invocacao.imprimir && invocacao.imprimir() // invoca imprimir apenas se o método existir
+
+// decorator de método
+class Banco {
+    private saldo: number = 1000
+    constructor() {}
+
+    @congelar
+    sacar(valor: number): void {
+        if (valor && valor <= this.saldo && valor > 0)
+            this.saldo -= valor
+            console.log(`Valor sacado R$${valor}`)
+    }
+
+    imprimirSaldo(): void {
+        console.log(`Valor em conta R$${this.saldo}`)
+    }
+}
+
+const operacaoBancaria = new Banco
+operacaoBancaria.sacar(500)
+operacaoBancaria.imprimirSaldo()
+
+// bloqueando método com decorator
+function congelar(
+    alvo: any,
+    nomeMetodo: string,
+    descritor: PropertyDescriptor
+): void {
+    descritor.writable= false
+}
